@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('background-image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 65px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .form-group {
+            margin: 20px 0;
+        }
+
+        label {
+            display: flex;
+        }
+
+        input[type="text"], input[type="email"], input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #030303e5;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="Home"><span>Home</span></a></li>
+        <li><a href="About"><span>About</span></a></li>
+        <li><a href="Contact"><span>Contact</span></a></li>
+        <li><a href="Login"><span>Login</span></a></li>
+        
+    </ul>
+    <div class="container">
+        <h1>Travel Details Collection</h1>
+        <p>Plan your next adventure with us and share your travel details. We're excited to be a part of your journey!</p>
+        <form>
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class "form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="from">From:</label>
+                <input type="text" id="from" name="from" required>
+            </div>
+
+            <div class="form-group">
+                <label for="to">To:</label>
+                <input type="text" id="to" name="to" required>
+            </div>
+
+            <div class="form-group">
+                <label for="departureDate">Departure Date:</label>
+                <input type="date" id="departureDate" name="departureDate" required>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
