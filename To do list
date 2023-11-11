@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <style>
+        body{
+   background-image: linear-gradient(to top right,#ee2e9b,#0ff5f1);
+        
+    height : 100%;
+    font-family : 'verdana';
+
+            
+}
+
+
+
+.container{
+    width: 450px;
+    margin : 0 auto;
+    background : white;
+    margin-top : 80px;
+    padding: 30px 20px;
+}
+#header{
+text-align: center;
+font-weight: bold;
+margin-bottom : 50px;
+font-size: 25px;
+}
+
+.list-item{
+position: relative;
+margin: 20px 0;
+padding : 15px 20px;
+border-radius: 20px;
+background-color: rgb(230, 236, 250);
+
+
+}
+
+.list-item:hover{
+ background-color: #F1F1F1;
+
+
+}
+
+.list-item div{
+transition:.3s;
+border: 1px solid gray;
+
+}
+
+
+
+
+
+
+input:checked ~ span{
+text-decoration: line-through;
+}
+
+input:checked ~ div{
+background:#D16CA6;
+color: white;
+border: 1px solid #D16CA6;
+
+}
+
+input:checked ~ div:before{
+content:'\2713';
+position: absolute;
+left: 5px;
+
+}
+
+        .text-box{
+            position: fixed;
+            top:0;
+            left: 0;
+            right : 0;
+            bottom : 0;
+            border : 1px solid red;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #app {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;   
+            border: none;
+            cursor: pointer;
+            
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .list-item{
+            position: relative;
+            margin: 20px 0;
+            padding : 15px 20px;
+            border-radius: 20px;
+            background-color: rgb(230, 236, 250);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <p id="header">My Todo List</p>
+        
+
+
+        <div class="list-item">
+           <input type="Checkbox">
+           <div></div>
+           <span>Coding</span>
+       </div>
+
+       <div class="list-item">
+           <input type="Checkbox">
+           <div></div>
+           <span>Completing Assignments</span>
+       </div>
+
+       <div class="list-item">
+           <input type="Checkbox">
+           <div></div>
+           <span>Excersise 1 hour daily</span>
+       </div>
+
+       <div class="list-item">
+           <input type="Checkbox">
+           <div></div>
+           <span>To be smart and productive</span>
+       </div>
+    
+
+       <div class="list-item">
+           <input type="Checkbox">
+           <div></div>
+           <span>Update LinkedIn profile</span>
+       </div>
+
+    <h2>Today's Agenda</h2>
+    <div id="app">
+        <input type="text" id="taskInput" placeholder="Add a new task">
+        <button id="addTask">Add</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        
+        const taskInput = document.getElementById("taskInput");
+        const addTask = document.getElementById("addTask");
+        const taskList = document.getElementById("taskList");
+        
+        
+
+        addTask.addEventListener("click", function() {
+            const taskText = taskInput.value;
+            if (taskText.trim() !== "") {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <input type="checkbox">
+                    <span>${taskText}</span>
+                    <button class="delete">Delete</button>
+                `;
+
+                taskList.appendChild(li);
+
+                // Clear the input field
+                taskInput.value = "";
+
+                // Add a click event listener to delete tasks
+                li.querySelector(".delete").addEventListener("click", function() {
+                    li.remove();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
